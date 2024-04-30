@@ -65,13 +65,10 @@ public class CrashLogAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             messageLogTime.setText(file.getName().replaceAll("[a-zA-Z_.]", ""));
             textViewMsg.setText(FileUtils.readFirstLineFromFile(new File(filePath)));
 
-            textViewMsg.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, LogMessageActivity.class);
-                    intent.putExtra("LogMessage", filePath);
-                    context.startActivity(intent);
-                }
+            textViewMsg.setOnClickListener(v -> {
+                Intent intent = new Intent(context, LogMessageActivity.class);
+                intent.putExtra("LogMessage", filePath);
+                context.startActivity(intent);
             });
         }
     }
