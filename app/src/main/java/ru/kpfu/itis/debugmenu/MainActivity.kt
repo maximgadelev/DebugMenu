@@ -39,6 +39,15 @@ class MainActivity : AppCompatActivity() {
                 environmentRepository = EnvironmentRepositoryImpl(this, BuildConfig.SERVER_URLS)
             )
         )
+        binding.btnFragment.setOnClickListener {
+            debugMenu.open(OpenType.FRAGMENT, arrayOf(ViewOne(), ViewTwo()))
+        }
+        binding.btnDialog.setOnClickListener {
+            debugMenu.open(OpenType.DIALOG, arrayOf(ViewOne(), ViewTwo()))
+        }
+        binding.btnBottomSheet.setOnClickListener {
+            debugMenu.open(OpenType.BOTTOM_SHEET, arrayOf(ViewOne(), ViewTwo()))
+        }
         binding.btnDo.setOnClickListener {
             lifecycleScope.launch {
                 api.test()
