@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StandardLoadingView">
+        <attr name="slv_loadingText" format="string" />
+        <attr name="slv_loading_subtitle" format="string" />
+        <attr name="android:background" />
+    </declare-styleable>
+</resources>
