@@ -17,8 +17,8 @@
         android:id="@+id/btn_do"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DO"
-        android:visibility="gone"
+        android:text="Do http"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
