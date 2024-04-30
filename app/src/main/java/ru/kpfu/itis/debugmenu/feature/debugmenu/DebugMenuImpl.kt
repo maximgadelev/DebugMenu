@@ -66,7 +66,8 @@ class DebugMenuImpl(
 
             OpenType.BOTTOM_SHEET -> {
                 DebugMenuBottomDialogFragment.newInstance(
-                    (context as AppCompatActivity).supportFragmentManager
+                    (context as AppCompatActivity).supportFragmentManager,
+                    debugMenusView
                 )
             }
 

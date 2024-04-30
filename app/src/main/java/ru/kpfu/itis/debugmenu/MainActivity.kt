@@ -10,6 +10,7 @@ import ru.kpfu.itis.debugmenu.databinding.ActivityMainBinding
 import ru.kpfu.itis.debugmenu.feature.debugmenu.DebugMenu
 import ru.kpfu.itis.debugmenu.feature.debugmenu.DebugMenuImpl
 import ru.kpfu.itis.debugmenu.feature.debugmenu.OpenType
+import ru.kpfu.itis.debugmenu.feature.debugmenu.debugmenutypes.DebugMenuFragment
 import ru.kpfu.itis.debugmenu.feature.network.provider.provideApi
 import ru.kpfu.itis.debugmenu.feature.network.provider.provideChucker
 import ru.kpfu.itis.debugmenu.feature.network.provider.provideJson
@@ -28,30 +29,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        debugMenu = DebugMenuImpl(this, BuildConfig.SERVER_URLS)
-        binding.root.setOnClickListener {
-            debugMenu.open(OpenType.DIALOG, arrayOf(ViewOne(), ViewTwo()))
-        }
-        val api = provideApi(
-            provideRetrofit(
-                okHttpClient = provideOkHttpClient(provideChucker(this)),
-                json = provideJson(),
-                environmentRepository = EnvironmentRepositoryImpl(this, BuildConfig.SERVER_URLS)
-            )
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        val fragment = MainFragment()
+        fragmentTransaction.replace(
+            R.id.fragment_container,
+            fragment
         )
-        binding.btnFragment.setOnClickListener {
-            debugMenu.open(OpenType.FRAGMENT, arrayOf(ViewOne(), ViewTwo()))
-        }
-        binding.btnDialog.setOnClickListener {
-            debugMenu.open(OpenType.DIALOG, arrayOf(ViewOne(), ViewTwo()))
-        }
-        binding.btnBottomSheet.setOnClickListener {
-            debugMenu.open(OpenType.BOTTOM_SHEET, arrayOf(ViewOne(), ViewTwo()))
-        }
-        binding.btnDo.setOnClickListener {
-            lifecycleScope.launch {
-                api.test()
-            }
-        }
+        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.commit()
     }
 }
