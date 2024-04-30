@@ -246,7 +246,9 @@ class DebugMenuFragment : MvpAppCompatFragment(), DebugMenuView, HBRecorderListe
     }
 
     override fun HBRecorderOnStart() {
-        Toast.makeText(requireContext(), "Ваш экран записывается", Toast.LENGTH_SHORT).show()
+        if (isAdded) {
+            Toast.makeText(requireContext(), "Ваш экран записывается", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun HBRecorderOnComplete() {

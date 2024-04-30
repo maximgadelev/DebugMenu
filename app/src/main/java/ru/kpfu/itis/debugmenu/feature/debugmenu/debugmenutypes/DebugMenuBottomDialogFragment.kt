@@ -34,7 +34,6 @@ import ru.kpfu.itis.debugmenu.feature.debugmenu.DebugMenuImpl.Companion.DEBUG_ME
 import ru.kpfu.itis.debugmenu.feature.debugmenu.entity.EnvironmentsData
 import ru.kpfu.itis.debugmenu.feature.debugmenu.presentation.DebugMenuPresenter
 import ru.kpfu.itis.debugmenu.feature.debugmenu.presentation.DebugMenuView
-import ru.kpfu.itis.debugmenu.feature.own_functionality.extension.inflate
 import ru.kpfu.itis.debugmenu.feature.recorder.DebugRecorder
 import toothpick.Toothpick
 import java.io.File
@@ -250,16 +249,24 @@ class DebugMenuBottomDialogFragment() : MvpBottomSheetDialogFragment(), DebugMen
     }
 
     override fun HBRecorderOnStart() {
-        Toast.makeText(
-            requireActivity().applicationContext,
-            "Ваш экран записывается",
-            Toast.LENGTH_SHORT
-        ).show()
+        if (isAdded) {
+            Toast.makeText(
+                requireActivity().applicationContext,
+                "Ваш экран записывается",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
     override fun HBRecorderOnComplete() {
-        Toast.makeText(requireActivity().applicationContext, "Запись завершена", Toast.LENGTH_SHORT)
-            .show()
+        if (isAdded) {
+            Toast.makeText(
+                requireActivity().applicationContext,
+                "Запись завершена",
+                Toast.LENGTH_SHORT
+            )
+                .show()
+        }
     }
 
     override fun HBRecorderOnError(errorCode: Int, reason: String?) {
