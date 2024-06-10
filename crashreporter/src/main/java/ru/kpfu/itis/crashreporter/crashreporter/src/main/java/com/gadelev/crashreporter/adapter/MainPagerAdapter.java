@@ -1,12 +1,12 @@
-package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.adapter;
+package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.adapter;
 
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.ui.CrashLogFragment;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.ui.ExceptionLogFragment;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.ui.CrashLogFragment;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.ui.ExceptionLogFragment;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
 

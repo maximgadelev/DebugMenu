@@ -1,4 +1,4 @@
-package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter;
+package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

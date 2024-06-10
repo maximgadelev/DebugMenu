@@ -1,4 +1,4 @@
-package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.utils;
+package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.utils;
 
 public class CrashReporterNotInitializedException extends CrashReporterException {
     static final long serialVersionUID = 1;

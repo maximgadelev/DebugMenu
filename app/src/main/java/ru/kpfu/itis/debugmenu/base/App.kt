@@ -3,7 +3,7 @@ package ru.kpfu.itis.debugmenu.base
 import android.app.ActivityManager
 import android.app.Application
 import android.os.Process
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.CrashReporter
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.CrashReporter
 import ru.kpfu.itis.debugmenu.BuildConfig
 import ru.kpfu.itis.debugmenu.di.AppModule
 import ru.kpfu.itis.debugmenu.di.DI

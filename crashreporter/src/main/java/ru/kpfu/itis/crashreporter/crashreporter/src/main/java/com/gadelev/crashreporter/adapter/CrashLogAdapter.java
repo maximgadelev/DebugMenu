@@ -1,4 +1,4 @@
-package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.adapter;
+package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,8 +15,8 @@ import java.io.File;
 import java.util.ArrayList;
 
 import ru.kpfu.itis.crashreporter.R;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.ui.LogMessageActivity;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.utils.FileUtils;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.ui.LogMessageActivity;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.utils.FileUtils;
 
 public class CrashLogAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 

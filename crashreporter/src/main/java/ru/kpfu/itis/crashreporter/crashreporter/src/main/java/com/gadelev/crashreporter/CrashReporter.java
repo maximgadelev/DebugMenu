@@ -1,12 +1,12 @@
-package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter;
+package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter;
 
 import android.content.Context;
 import android.content.Intent;
 
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.ui.CrashReporterActivity;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.utils.CrashReporterExceptionHandler;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.utils.CrashReporterNotInitializedException;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.utils.CrashUtil;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.ui.CrashReporterActivity;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.utils.CrashReporterExceptionHandler;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.utils.CrashReporterNotInitializedException;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.utils.CrashUtil;
 
 public class CrashReporter {
 

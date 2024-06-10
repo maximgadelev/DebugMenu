@@ -1,4 +1,4 @@
-package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.ui;
+package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.ui;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,17 +20,16 @@ import java.util.Collections;
 import java.util.Iterator;
 
 import ru.kpfu.itis.crashreporter.R;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.CrashReporter;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.adapter.CrashLogAdapter;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.utils.Constants;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.utils.CrashUtil;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.CrashReporter;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.adapter.CrashLogAdapter;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.utils.Constants;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.utils.CrashUtil;
 
-
-public class ExceptionLogFragment extends Fragment {
+public class CrashLogFragment extends Fragment {
 
     private CrashLogAdapter logAdapter;
 
-    private RecyclerView exceptionRecyclerView;
+    private RecyclerView crashRecyclerView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,8 +39,8 @@ public class ExceptionLogFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.exception_log, container, false);
-        exceptionRecyclerView = (RecyclerView) view.findViewById(R.id.exceptionRecyclerView);
+        View view = inflater.inflate(R.layout.crash_log, container, false);
+        crashRecyclerView = (RecyclerView) view.findViewById(R.id.crashRecyclerView);
 
         return view;
     }
@@ -50,40 +48,39 @@ public class ExceptionLogFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        loadAdapter(getActivity(), exceptionRecyclerView);
+        loadAdapter(getActivity(), crashRecyclerView);
     }
 
-    private void loadAdapter(Context context, RecyclerView exceptionRecyclerView) {
+    private void loadAdapter(Context context, RecyclerView crashRecyclerView) {
 
-        logAdapter = new CrashLogAdapter(context, getAllExceptions());
-        exceptionRecyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
-        exceptionRecyclerView.setAdapter(logAdapter);
+        logAdapter = new CrashLogAdapter(context, getAllCrashes());
+        crashRecyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        crashRecyclerView.setAdapter(logAdapter);
     }
 
     public void clearLog() {
         if (logAdapter != null) {
-            logAdapter.updateList(getAllExceptions());
+            logAdapter.updateList(getAllCrashes());
         }
     }
 
-    public ArrayList<File> getAllExceptions() {
+
+    private ArrayList<File> getAllCrashes() {
         String directoryPath;
         String crashReportPath = CrashReporter.getCrashReportPath();
 
-        if (TextUtils.isEmpty(crashReportPath)){
+        if (TextUtils.isEmpty(crashReportPath)) {
             directoryPath = CrashUtil.getDefaultPath();
-        } else{
+        } else {
             directoryPath = crashReportPath;
         }
-
         File directory = new File(directoryPath);
-        if (!directory.exists() || !directory.isDirectory()){
+        if (!directory.exists() || !directory.isDirectory()) {
             throw new RuntimeException("The path provided doesn't exists : " + directoryPath);
         }
-
         ArrayList<File> listOfFiles = new ArrayList<>(Arrays.asList(directory.listFiles()));
         for (Iterator<File> iterator = listOfFiles.iterator(); iterator.hasNext(); ) {
-            if (iterator.next().getName().contains(Constants.CRASH_SUFFIX)) {
+            if (iterator.next().getName().contains(Constants.EXCEPTION_SUFFIX)) {
                 iterator.remove();
             }
         }

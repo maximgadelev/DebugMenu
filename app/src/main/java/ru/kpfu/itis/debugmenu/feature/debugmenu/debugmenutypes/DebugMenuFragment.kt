@@ -26,7 +26,7 @@ import com.jakewharton.processphoenix.ProcessPhoenix
 import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.ui.CrashReporterActivity
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.ui.CrashReporterActivity
 import ru.kpfu.itis.debugmenu.R
 import ru.kpfu.itis.debugmenu.databinding.FragmentDebugMenuBinding
 import ru.kpfu.itis.debugmenu.feature.debugmenu.DebugMenuImpl.Companion.DEBUG_MENU_SCOPE

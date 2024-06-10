@@ -1,7 +1,7 @@
-package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.utils;
+package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.utils;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
-import static ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.utils.Constants.CHANNEL_NOTIFICATION_ID;
+import static ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.utils.Constants.CHANNEL_NOTIFICATION_ID;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -26,7 +26,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import ru.kpfu.itis.crashreporter.R;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.CrashReporter;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.CrashReporter;
 
 public class CrashUtil {
 

@@ -5,20 +5,20 @@
     <application android:supportsRtl="true">
 
         <provider
-            android:name="ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.CrashReporterInitProvider"
+            android:name="ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.CrashReporterInitProvider"
             android:authorities="${applicationId}.CrashReporterInitProvider"
             android:enabled="true"
             android:exported="false" />
 
         <activity
-            android:name="ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.ui.CrashReporterActivity"
+            android:name="ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.ui.CrashReporterActivity"
             android:launchMode="singleTask"
             android:taskAffinity="com.balsikandar.android.task"
             android:theme="@style/CrashReporter.Theme" />
 
         <activity
-            android:name="ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.ui.LogMessageActivity"
-            android:parentActivityName="ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.ui.CrashReporterActivity"
+            android:name="ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.ui.LogMessageActivity"
+            android:parentActivityName="ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.ui.CrashReporterActivity"
             android:theme="@style/CrashReporter.Theme" />
     </application>
 

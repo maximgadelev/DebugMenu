@@ -1,4 +1,4 @@
-package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.ui;
+package ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.ui;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -14,8 +14,8 @@ import androidx.appcompat.widget.Toolbar;
 import java.io.File;
 
 import ru.kpfu.itis.crashreporter.R;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.utils.AppUtils;
-import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.balsikandar.crashreporter.utils.FileUtils;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.utils.AppUtils;
+import ru.kpfu.itis.crashreporter.crashreporter.src.main.java.com.gadelev.crashreporter.utils.FileUtils;
 
 public class LogMessageActivity extends AppCompatActivity {
 
